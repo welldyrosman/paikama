@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/paikama/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-    <script type="module" crossorigin src="/paikama/assets/index.1b8b4f7a.js"></script>
-    <link rel="stylesheet" href="/paikama/assets/index.f185673b.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/paikama/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vite App</title>
+  <script type="module" crossorigin src="/paikama/assets/index.caefa35c.js"></script>
+  <link rel="stylesheet" href="/paikama/assets/index.ca69cb8d.css">
+</head>
+
+<body>
+  <div id="app"></div>
+  
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script>
+    jQuery.event.special.touchstart = {
+      setup: function (_, ns, handle) {
+        if (ns.includes("noPreventDefault")) {
+          this.addEventListener("touchstart", handle, { passive: false });
+        } else {
+          this.addEventListener("touchstart", handle, { passive: true });
+        }
+      }
+    };
+    jQuery.event.special.touchmove = {
+      setup: function (_, ns, handle) {
+        if (ns.includes("noPreventDefault")) {
+          this.addEventListener("touchmove", handle, { passive: false });
+        } else {
+          this.addEventListener("touchmove", handle, { passive: true });
+        }
+      }
+    };
+  </script>
+</body>
+
 </html>
