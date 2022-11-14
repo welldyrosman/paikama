@@ -1,6 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/paikamam/public_html/
-    - /bin/cp -u -r * $DEPLOYPATH
-    - /bin/cp .htaccess $DEPLOYPATH
